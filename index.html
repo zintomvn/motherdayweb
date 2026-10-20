@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>20/10 · Gửi mẹ yêu | Duc Le</title>
+<meta name="description" content="Một món quà nhỏ con dành tặng mẹ nhân ngày 20/10. Chúc mẹ luôn khỏe mạnh, bình an và được yêu thương thật nhiều.">
+<meta name="theme-color" content="#190812">
+<meta property="og:title" content="20/10 · Gửi mẹ yêu">
+<meta property="og:description" content="Mẹ là bông hoa đẹp nhất trong lòng con. Một món quà nhỏ từ Duc Le, dành riêng cho mẹ.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
+
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/sections.css">
+<script>document.documentElement.classList.add('js')</script>
+<noscript><style>.js [data-reveal],.js .hero__title .line>span{opacity:1;transform:none}.hero__art,.bouquet,.wishes,.garden,.manifesto{display:none}</style></noscript>
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="20·10 · Về đầu trang">20<span>·</span>10</a>
+  <nav class="nav__links" aria-label="Điều hướng chính">
+    <a href="#loi-chuc">Lời chúc</a>
+    <a href="#khu-vuon">Khu vườn</a>
+  </nav>
+  <button class="nav__burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Mở menu"><i></i><i></i></button>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="#loi-chuc" style="--i:0">Lời <em>chúc</em></a>
+  <a href="#khu-vuon" style="--i:1">Khu <em>vườn</em></a>
+</div>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<main id="top">
+
+  <div class="night">
+    <section class="hero" id="hero">
+      <div class="hero__sky" aria-hidden="true">
+        <div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div>
+        <div class="stars" id="stars"></div>
+      </div>
+
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow" data-reveal><b></b>20 · 10 · Ngày Phụ nữ Việt Nam</p>
+          <h1 class="hero__title">
+            <span class="hero__to" id="heroTo">Gửi mẹ yêu,</span>
+            <span class="line"><span style="--i:0">Mẹ là</span></span>
+            <span class="line"><span style="--i:1"><em>bông hoa</em></span></span>
+            <span class="line"><span style="--i:2">đẹp nhất.</span></span>
+          </h1>
+          <p class="hero__lead" data-reveal style="--i:3">Một món quà nhỏ con dành riêng cho mẹ. Cảm ơn mẹ vì đã luôn yêu thương, chở che và là nơi bình yên nhất để con trở về.</p>
+          <div class="hero__cta" data-reveal style="--i:4">
+            <a class="btn btn--primary" href="#loi-chuc">
+              <span>Lời chúc dành cho mẹ</span>
+              <span class="btn__icon"><svg viewBox="0 0 16 16"><path d="M4 12 12 4M5.5 4H12v6.5"/></svg></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__art" id="heroArt" data-no-fx role="button" tabindex="0" aria-label="chạm để hoa nở lại">
+          <svg class="orbit" viewBox="0 0 400 400" aria-hidden="true">
+            <defs><path id="orbitPath" d="M200,200 m-182,0 a182,182 0 1,1 364,0 a182,182 0 1,1 -364,0"/></defs>
+            <text><textPath href="#orbitPath" textLength="1136" lengthAdjust="spacing">CHÚC MỪNG NGÀY PHỤ NỮ VIỆT NAM  ·  20 . 10  ·  CON YÊU MẸ THẬT NHIỀU  ·  </textPath></text>
+          </svg>
+          <div class="hero__tilt" id="heroTilt"><canvas id="heroFlower" role="img" aria-label="Một bông hoa đang nở"></canvas></div>
+          <span class="hero__hint">chạm để hoa nở lại</span>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#manifesto" aria-label="Cuộn xuống"><span>Cuộn</span><i></i></a>
+    </section>
+
+    <section class="manifesto" id="manifesto">
+      <div class="manifesto__stage">
+        <p class="manifesto__text" id="manifestoText" data-text="Hôm nay là ngày *20/10.* | Con chúc mẹ luôn *khỏe mạnh,* bình an và có thật nhiều niềm vui. | Cảm ơn mẹ vì những yêu thương lặng thầm, những bữa cơm ấm và vòng tay luôn rộng mở. | Mong mỗi ngày của mẹ đều nhẹ nhàng, ngập tràn *yêu thương* và *hạnh phúc.* | Con yêu mẹ thật nhiều!"></p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Bó hoa tự gói khi cuộn: mọi hình vẽ trong hệ 400×600, nút buộc ở (200, 452) -->
+  <section class="bouquet" id="bo-hoa" aria-labelledby="bqTitle">
+    <div class="bouquet__stage">
+      <div class="bouquet__stars stars"></div>
+      <div class="bouquet__copy">
+        <p class="eyebrow"><b></b>Một bó hoa tặng mẹ</p>
+        <h2 class="h2" id="bqTitle">Gói trọn <em>yêu&nbsp;thương</em><br>vào một bó&nbsp;hoa.</h2>
+        <ol class="bq-steps" id="bqSteps">
+          <li><b>01</b>Chọn những cành đẹp nhất</li>
+          <li><b>02</b>Chờ từng bông nở rộ</li>
+          <li><b>03</b>Gói lại bằng giấy lụa</li>
+          <li><b>04</b>Thắt một chiếc nơ</li>
+        </ol>
+      </div>
+      <div class="bq" id="bq" role="img" aria-label="Bó hoa hồng, huệ trắng, lan và hoa đào gói giấy lụa, thắt nơ hồng, kèm lời nhắn: Gửi mẹ">
+        <div class="bq__spot" id="bqSpot"></div>
+        <div class="bq__sway" id="bqSway">
+          <svg class="bq__back" viewBox="0 0 400 600" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="bqTis" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#ffd9e2" stop-opacity=".08"/></linearGradient>
+              <linearGradient id="bqMauve" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d48aa5"/><stop offset=".55" stop-color="#9b4b70"/><stop offset="1" stop-color="#4f1a3c"/></linearGradient>
+              <linearGradient id="bqChamp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7dfbd"/><stop offset=".55" stop-color="#cf9f78"/><stop offset="1" stop-color="#6e4234"/></linearGradient>
+              <linearGradient id="bqLeaf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4f7d4c"/><stop offset="1" stop-color="#a9cf95"/></linearGradient>
+              <linearGradient id="bqEuc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6f9182"/><stop offset="1" stop-color="#c3d8c9"/></linearGradient>
+            </defs>
+            <path class="bq-wrap" id="bqTissue" fill="url(#bqTis)" d="M200 460C110 380 0 250-6 130Q30 80 70 84Q100 30 150 40Q200 0 250 40Q300 30 330 84Q370 80 406 130C400 250 290 380 200 460Z"/>
+            <path class="bq-wrap bq-back" fill="url(#bqMauve)" d="M192 456C120 380 40 260 20 150C60 120 90 70 150 52C180 40 214 46 236 64C228 200 214 340 208 456Z"/>
+            <path class="bq-wrap bq-back" fill="url(#bqChamp)" d="M208 456C280 380 360 260 380 150C340 120 310 70 250 52C220 40 186 46 164 64C172 200 186 340 192 456Z"/>
+            <g id="bqGreen"></g>
+            <g id="bqStems"></g>
+            <g id="bqBuds"></g>
+          </svg>
+          <svg class="bq__front" id="bqFront" viewBox="0 0 400 600" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="bqCream" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#fffaf3"/><stop offset=".5" stop-color="#f4e4d3"/><stop offset="1" stop-color="#d4ad97"/></linearGradient>
+              <linearGradient id="bqBlush" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#fff1f4"/><stop offset=".5" stop-color="#f6c9d4"/><stop offset="1" stop-color="#cf8396"/></linearGradient>
+              <linearGradient id="bqLipC" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffe3ea"/><stop offset="1" stop-color="#fff8f5"/></linearGradient>
+              <linearGradient id="bqLipB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff6ec"/><stop offset="1" stop-color="#fffdf9"/></linearGradient>
+              <linearGradient id="bqPleatHi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".42"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+              <linearGradient id="bqPleatLo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a2f3c" stop-opacity=".14"/><stop offset="1" stop-color="#7a2f3c" stop-opacity="0"/></linearGradient>
+              <linearGradient id="bqSatin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9ab8"/><stop offset=".45" stop-color="#d63d6c"/><stop offset="1" stop-color="#7d1538"/></linearGradient>
+              <!-- Một tờ giấy (bên trái); tờ phải là bản lật gương. Mép trên gập ra, thân có nếp li chụm về nút, đuôi xoè dưới nơ. -->
+              <path id="bqSheetPath" d="M191 452C150 404 52 330 14 254C46 262 76 266 104 280C140 298 168 314 200 326C226 336 248 348 264 362C244 386 222 416 208 452C210 500 208 540 206 578C192 572 176 580 160 572C174 532 186 494 191 452Z"/>
+              <clipPath id="bqSheetClip"><use href="#bqSheetPath"/></clipPath>
+              <g id="bqSheet">
+                <use href="#bqSheetPath" fill="#2a0718" opacity=".32" transform="translate(-3 7)"/>
+                <use href="#bqSheetPath" style="fill: var(--paper)"/>
+                <g clip-path="url(#bqSheetClip)">
+                  <path fill="url(#bqPleatHi)" d="M52 290L80 296L197 452ZM128 312L156 322L199 452ZM212 342L236 352L203 452ZM176 520L186 470L196 578Z"/>
+                  <path fill="url(#bqPleatLo)" d="M80 296L94 300L198 452ZM156 322L168 327L200 452ZM186 470L196 470L204 578Z"/>
+                  <path fill="none" stroke="#5a1e2c" stroke-opacity=".1" stroke-width="8" d="M18 282C44 280 76 286 104 298C138 312 166 326 200 338C226 346 246 354 264 362"/>
+                </g>
+                <path style="fill: var(--lip)" d="M14 254C46 262 76 266 104 280C140 298 168 314 200 326C226 336 248 348 264 362C246 354 226 346 200 338C166 326 138 312 104 298C76 286 44 280 18 282Z"/>
+                <path fill="none" stroke="#6e3240" stroke-opacity=".3" stroke-width=".9" d="M18 282C44 280 76 286 104 298C138 312 166 326 200 338C226 346 246 354 264 362"/>
+                <path class="bq-rim" d="M14 254C46 262 76 266 104 280C140 298 168 314 200 326C226 336 248 348 264 362"/>
+              </g>
+            </defs>
+            <g class="bq-wrap bq-sheet" style="--paper: url(#bqCream); --lip: url(#bqLipC)"><use href="#bqSheet"/></g>
+            <g class="bq-wrap bq-sheet" style="--paper: url(#bqBlush); --lip: url(#bqLipB)"><use href="#bqSheet" transform="matrix(-1 0 0 1 400 0) rotate(3 200 452)"/></g>
+            <path class="bq-string" id="bqString" d="M206 462Q212 494 240 501"/>
+            <g class="bq-bow" id="bqBow" fill="url(#bqSatin)">
+              <path class="bq-tail" d="M194 458C186 490 168 520 150 552L164 548L170 562C186 530 200 494 204 460Z"/>
+              <path class="bq-tail" d="M206 458C216 494 236 528 256 566L242 562L238 576C222 540 204 500 198 460Z"/>
+              <path d="M180 446Q200 440 220 446L222 460Q200 454 178 460Z"/>
+              <path class="bq-loop" d="M200 452C176 424 128 414 122 440C118 462 160 474 200 452Z"/>
+              <path class="bq-loop" d="M200 452C224 424 272 414 278 440C282 462 240 474 200 452Z"/>
+              <path fill="#6d1232" opacity=".55" d="M200 452C180 440 146 434 136 444C150 450 176 454 200 452ZM200 452C220 440 254 434 264 444C250 450 224 454 200 452Z"/>
+              <rect class="bq-loop" x="189" y="440" width="22" height="26" rx="8"/>
+            </g>
+          </svg>
+          <p class="bq__tag" id="bqTag"><b id="bqTo">Gửi mẹ</b><small>20 · 10</small></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track" id="marquee"></div>
+  </div>
+
+  <section class="wishes" id="loi-chuc" aria-labelledby="wishesTitle">
+    <div class="wishes__sticky" id="wishesSticky">
+      <ol class="wishes__track" id="wishesTrack">
+        <li class="wishes__intro">
+          <p class="eyebrow"><b></b>Lời chúc</p>
+          <h2 class="h2" id="wishesTitle">Mười lời chúc<br>dành cho <em>mẹ yêu</em></h2>
+          <p>Mỗi bông hoa mang một điều con mong cho mẹ. Những lời yêu thương đôi khi con chưa kịp nói thành lời.</p>
+          <span class="wishes__hint"><i></i>Cuộn để xem</span>
+        </li>
+      </ol>
+      <div class="wishes__meter" aria-hidden="true"><i id="wishesMeter"></i></div>
+    </div>
+  </section>
+
+  <section class="garden" id="khu-vuon" aria-labelledby="gardenTitle">
+    <div class="container">
+      <div class="garden__head" data-reveal>
+        <div>
+          <p class="eyebrow"><b></b>Khu vườn lời chúc</p>
+          <h2 class="h2" id="gardenTitle">Chạm vào một nụ hoa,<br><em>để nó nở vì mẹ.</em></h2>
+        </div>
+        <p class="garden__count" id="gardenCount" aria-live="polite">0 / 6 bông đã nở</p>
+      </div>
+
+      <div class="garden__field" id="gardenField" data-reveal></div>
+
+      <figure class="garden__note" id="gardenNote" data-reveal>
+        <div>
+          <small id="gardenFlower">Khu vườn dành riêng cho mẹ</small>
+          <blockquote id="gardenWish" aria-live="polite">Mẹ chạm vào một nụ hoa để nhận lời chúc của con nhé.</blockquote>
+          <p class="garden__done" id="gardenDone" hidden>Cả khu vườn đã nở vì mẹ. Con yêu mẹ thật nhiều!</p>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="finale" id="finale">
+    <div class="finale__sky" aria-hidden="true"><div class="aurora a1"></div><div class="aurora a2"></div></div>
+    <div class="finale__inner">
+      <p class="finale__script" data-reveal>Con chúc mẹ yêu</p>
+      <h2 class="finale__title" data-reveal style="--i:1">một ngày 20/10<em>thật ngọt ngào.</em></h2>
+      <p class="finale__lead" data-reveal style="--i:2">Mong mẹ luôn khỏe mạnh, bình yên và được yêu thương, hôm nay và cả những ngày sau nữa.</p>
+      <div data-reveal style="--i:3">
+        <button class="btn btn--primary" type="button" id="btnFinale">
+          <span>Thả cánh hoa</span>
+          <span class="btn__icon"><svg viewBox="0 0 16 16"><path d="M8 2v12M2 8h12"/></svg></span>
+        </button>
+      </div>
+    </div>
+    <p class="finale__foot" lang="en">Made with love by <b>Duc Le</b> · 20.10</p>
+  </section>
+
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<script defer src="js/data.js"></script>
+<script defer src="js/flower.js"></script>
+<script defer src="js/fx.js"></script>
+<script defer src="js/scroll.js"></script>
+<script defer src="js/garden.js"></script>
+<script defer src="js/main.js"></script>
+</body>
+</html>
+
